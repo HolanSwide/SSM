@@ -13,6 +13,7 @@ import java.util.List;
 
 public class UserMapImp implements UserMap {
     private SqlSessionTemplate session;
+
     //必须要有Set方法
     public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
         this.session = sqlSessionTemplate;
@@ -21,5 +22,20 @@ public class UserMapImp implements UserMap {
     @Override
     public List<User> queryUserAll() {
         return this.session.getMapper(UserMap.class).queryUserAll();
+    }
+
+    @Override
+    public User queryUserByUsername(String username) {
+        return this.session.getMapper(UserMap.class).queryUserByUsername(username);
+    }
+
+    @Override
+    public int addUser(User user) {
+        // 检查数据是否非空
+        if (user.getUsername() == null || user.getPassword() == null) return 3;
+        if (user.getUsername().equals("") || user.getPassword().equals("")) return 3;
+        // 检查用户名重复
+        if (this.queryUserByUsername(user.getUsername()) != null) return 2;
+        return this.session.getMapper(UserMap.class).addUser(user);
     }
 }

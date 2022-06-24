@@ -16,7 +16,4 @@ public class SpringBean {
     public static ApplicationContext getAc() {
         return ac;
     }
-    public static Object getBean(String name, Class className) {
-        return ac.getBean(name,className);
-    }
 }

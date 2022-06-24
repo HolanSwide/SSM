@@ -14,11 +14,11 @@ import org.junit.Test;
 public class day01 {
     @Test
     public void testFactorySpringBean() {
-        System.out.println(SpringBean.getBean("user", User.class));
+        System.out.println(SpringBean.getAc().getBean("user", User.class));
     }
     @Test
     public void MybatisXSpring() {
-        UserMapImp umi = (UserMapImp) SpringBean.getBean("userMapImp",UserMapImp.class);
+        UserMapImp umi = (UserMapImp) SpringBean.getAc().getBean("userMapImp",UserMapImp.class);
         System.out.println(umi.queryUserAll());
     }
 }
