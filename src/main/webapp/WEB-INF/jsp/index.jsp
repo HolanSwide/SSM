@@ -21,8 +21,8 @@
 <hr>
 
 <form align="center" action="${pageContext.request.contextPath}/user/register">
-    <br>Username: <label for="username"></label><input type="text" id="Rusername" name="username" value="Hello" ><br>
-    <br>Password: <label for="password"></label><input type="password" id="Rpassword" name="password" ><br>
+    <br>Username: <label for="Rusername"></label><input type="text" id="Rusername" name="username" value="Hello" ><br>
+    <br>Password: <label for="Rpassword"></label><input type="password" id="Rpassword" name="password" ><br>
     <br><button type="submit" id="register" name="register">REGISTER</button>
 </form>
 

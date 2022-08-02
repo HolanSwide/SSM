@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        *{
+            margin-top: 10px;
+            font-size: 20px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">EVANGELION</h1><br><hr><br>
+    <div id="main">
+        <form align="center" action="/user/login">
+            <br>Username: <label for="username"></label><input type="text" id="username" name="username" value="Hello" ><br>
+            <br>Password: <label for="password"></label><input type="password" id="password" name="password" ><br>
+            <br><button type="submit" id="submit" name="submit">LOGIN</button>
+        </form>
+
+        <hr>
+
+        <form align="center" action="/user/register">
+            <br>Username: <label for="Rusername"></label><input type="text" id="Rusername" name="username" value="Hello" ><br>
+            <br>Password: <label for="Rpassword"></label><input type="password" id="Rpassword" name="password" ><br>
+            <br><button type="submit" id="register" name="register">REGISTER</button>
+        </form>
+    </div>
+
+
+</body>
+
+
+<script>
+    let mainVue = new Vue({
+        el:'#main',
+        data:{
+            login:'${pageContext.request.contextPath}/user/login',
+            register:'${pageContext.request.contextPath}/user/register'
+        },
+        created(){
+            console.log("Vue Created "+this.name)
+        }
+    })
+</script>
+
+</html>
