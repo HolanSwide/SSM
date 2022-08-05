@@ -3,6 +3,7 @@ package com.holanswide.homework.day02;
 import com.holanswide.factory.SpringBean;
 import com.holanswide.model.User;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,9 +20,22 @@ import java.util.List;
  */
 
 @Component
-public class JDBCTemplateTest {
+public class JdbcTemplateTest {
     JdbcTemplate template;
+    @Value("select * from `user`")
     String sql;
+    @Autowired
+    User user;
+    @Value("#{user}")
+    User beanUser;
+
+    @Test
+    public void test() {
+        JdbcTemplateTest t = SpringBean.getAc().getBean("jdbcTemplateTest",JdbcTemplateTest.class);
+        System.out.println(t.user);
+        System.out.println(t.beanUser);
+        System.out.println(t.sql);
+    }
 
     @Test
     public void query() {

@@ -27,9 +27,9 @@
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           id="internalResourceViewResolver">
         <!-- 前缀 -->
-        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="prefix" value="/app/html/" />
         <!-- 后缀 -->
-        <property name="suffix" value=".jsp" />
+        <property name="suffix" value=".html" />
     </bean>
 
     <!--关于拦截器的配置-->

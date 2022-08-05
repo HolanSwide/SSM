@@ -1,13 +1,14 @@
 package com.holanswide.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.holanswide.factory.SpringBean;
 import com.holanswide.mapper.UserMapImp;
 import com.holanswide.model.User;
+import com.holanswide.service.Login;
+import com.holanswide.service.Register;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author ：holan
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/user")
+@SessionAttributes("user")
 public class UserController {
     @GetMapping("/me")
     public String getMe(Model model) {
@@ -25,40 +27,21 @@ public class UserController {
         return "hello";
     }
 
-    @GetMapping("/login")
-    public String doLogin(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
-        System.out.println("> Username: " + username + " , Password: " + password);
-        UserMapImp umi = SpringBean.getAc().getBean("userMapImp", UserMapImp.class);
-        User nowUser = umi.queryUserByUsername(username);
-        if (nowUser != null) {
-            model.addAttribute("me", nowUser);
-            return "hello";
-        } else {
-            model.addAttribute("msg", "登陆失败，请检查账号密码是否正确，或注册");
+    @PostMapping("/login")
+    public String login(@RequestBody String obj, Model model) {
+        System.out.println(obj);
+        String username = JSON.parseObject(obj).getString("username");
+        String password = JSON.parseObject(obj).getString("password");
+        User user = SpringBean.getAc().getBean("login",Login.class).doLogin(username,password,model);
+        model.addAttribute("user",user);
+        System.out.println(">user:"+user);
+        if(user==null) {
             return "index";
-        }
+        } else return "hello";
     }
 
     @GetMapping("/register")
-    public String doRegister(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
-        User user = (User) SpringBean.getAc().getBean("user", User.class);
-        user.setUsername(username);
-        user.setPassword(password);
-        UserMapImp umi = SpringBean.getAc().getBean("userMapImp", UserMapImp.class);
-        int res = umi.addUser(user);
-        String msg = null;
-        switch (res) {
-            case 1:
-                msg = "注册成功！";
-                break;
-            case 2:
-                msg = "用户名重复！";
-                break;
-            default:
-                msg = "注册失败，请重试...";
-                break;
-        }
-        model.addAttribute("msg", msg);
-        return "index";
+    public String register(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
+        return SpringBean.getAc().getBean("register", Register.class).doRegister(username, password, model);
     }
 }
