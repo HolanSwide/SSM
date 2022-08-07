@@ -24,7 +24,7 @@ public class Register {
         String msg = null;
         switch (res) {
             case 1:
-                msg = "注册成功！";
+                msg = "注册成功！点击确认自动登录";
                 break;
             case 2:
                 msg = "用户名重复！";
@@ -34,6 +34,7 @@ public class Register {
                 break;
         }
         model.addAttribute("msg", msg);
+        model.addAttribute("res",res);
         return "index";
     }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -33,7 +33,7 @@
             color: #637aff;
         }
     </style>
-    <title>Hello</title>
+    <title>NERV</title>
 </head>
 <body>
     <div id="top">
@@ -47,14 +47,8 @@
         <a v-else  @click="isLogin=!isLogin" style="font-size: medium">已有帐号，去登陆</a>
         <br>
         <button v-if="isLogin" id="login" style="font-size: medium" @click="login">login</button>
-        <button v-else style="font-size: medium">register</button>
+        <button v-else style="font-size: medium" @click="register">register</button>
     </div>
-
-    <script th:inline="javascript">
-        var modelUser = [[${user}]];
-        var modelMsg= [[${msg}]];
-        window.alert(modelMsg);
-    </script>
 
     <script>
         new Vue({
@@ -65,23 +59,48 @@
                     username:'',
                     password:''
                 },
-                url:'http://localhost:8080/SSM_war_exploded/user/login'
+                url:{
+                    login:'http://localhost:8080/SSM_war_exploded/user/login',
+                    register:'http://localhost:8080/SSM_war_exploded/user/register'
+                }
             },
             created() {
-                console.log(modelMsg+'\n'+modelUser)
             },
             methods:{
                 login() {
                     axios({
                         method: 'post',
-                        url: this.url,
+                        url: this.url.login,
                         data: JSON.stringify(this.userData),
                         headers: {
                             'Content-Type': 'application/json;charset=UTF-8'
                         }
                     }).then(res=>{
-                        console.log(res);
-                        document.write(res.data);
+                        alert(res.data["msg"]);
+                        console.log(res.data);
+                        if(res.data["sign"]) {
+                            window.location.href=res.data["url"];
+                        }
+                    }).catch(err=>{
+                        console.log(err);
+                    })
+                },
+                register() {
+                    axios({
+                        method: 'post',
+                        url: this.url.register,
+                        data: JSON.stringify(this.userData),
+                        headers: {
+                            'Content-Type': 'application/json;charset=UTF-8'
+                        }
+                    }).then(res=>{
+                        console.log(res.data);
+                        alert(res.data["msg"]);
+                        if(res.data["res"]===1) this.login();
+                        else {
+                            this.userData.username='';
+                            this.userData.password='';
+                        }
                     }).catch(err=>{
                         console.log(err);
                     })

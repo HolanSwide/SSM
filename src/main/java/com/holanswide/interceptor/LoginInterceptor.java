@@ -1,10 +1,12 @@
 package com.holanswide.interceptor;
 
+import com.holanswide.model.User;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * @author ：holan
@@ -13,6 +15,17 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 public class LoginInterceptor implements HandlerInterceptor {
+    private List<String> exceptUrls;
+
+    public List<String> getExceptUrls() {
+        return exceptUrls;
+    }
+
+    public void setExceptUrls(List<String> exceptUrls) {
+        this.exceptUrls = exceptUrls;
+    }
+
+
     @Override
     // 判断请求是否放行 True放行 False拦截
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -20,25 +33,32 @@ public class LoginInterceptor implements HandlerInterceptor {
         //在请求处理的方法之前执行
         //如果返回true执行下一个拦截器
         //如果返回false就不执行下一个拦截器
+        String requestUri = request.getRequestURI();
+        if(requestUri.startsWith(request.getContextPath())){
+            requestUri = requestUri.substring(request.getContextPath().length());
+        }
+        //系统根目录
+        if (requestUri.equals("/")) {
+            return true;
+        }
+        //放行exceptUrls中配置的url
+        for (String url:exceptUrls) {
+            if(url.endsWith("/**")){
+                if (requestUri.startsWith(url.substring(0, url.length() - 3))) {
+                    return true;
+                }
+            } else if (requestUri.startsWith(url)) {
+                return true;
+            }
+        }
+
         System.out.println("Pre... "+handler.toString());
         // handler是url请求访问的控制器（类）
+        User user = (User)request.getSession().getAttribute("user");
+        if(user == null) {
+            response.sendRedirect("http://localhost:8080/SSM_war_exploded/");
+            return false;
+        }
         return true;
-    }
-
-    @Override
-    // 请求通过后的操作
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        // handler是url请求访问的控制器（类）
-        // ModelAndView 包含 Model 和 View 两个属性
-        // Model : JSON格式，即发请求的控制器发来的 Model
-        // View : 该控制器请求访问的地址
-        System.out.println("Post... " + modelAndView.toString());
-    }
-
-    @Override
-    // 请求放行后，一般用于清理数据
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        // handler : 请求来源的控制器
-        System.out.println("After... "+handler.toString());
     }
 }

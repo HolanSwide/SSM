@@ -38,9 +38,15 @@
             <!--/** 包括路径及其子路径-->
             <!--/admin/* 拦截的是/admin/add等等这种 , /admin/add/user不会被拦截-->
             <!--/admin/** 拦截的是/admin/下的所有-->
-            <mvc:mapping path="/a/**"/>
+            <mvc:mapping path="/app/html/**"/>
             <!--bean配置的就是拦截器-->
-            <bean class="com.holanswide.interceptor.LoginInterceptor"/>
+            <bean class="com.holanswide.interceptor.LoginInterceptor">
+                <property name="exceptUrls">
+                    <list>
+                        <value>/app/html/index.html</value>
+                    </list>
+                </property>
+            </bean>
         </mvc:interceptor>
     </mvc:interceptors>
 

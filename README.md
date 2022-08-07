@@ -29,5 +29,20 @@
 ## day03
 > 2022年6月25日16点11分
 
-- 今天开始前端学习
-- 采用Vue框架
+- 采用Vue框架重构
+
+## day04
+> 2022年8月6日15点24分
+
+- 如何使Controller返回数据而非页面
+
+> 在对应方法体上添加注解`@ResponseBody`,
+> 同时要在`@RequestMapping`注解中加入参数`produces={"application/json;charset=UTF-8"}`以防止乱码
+
+- 拦截器添加满足条件的不拦截的站点
+
+> 见 [spingmvc-config.xml](./src/main/resources/springmvc-config.xml) 和
+> [LoginInterceptor.java](./src/main/java/com/holanswide/interceptor/LoginInterceptor.java) 
+
+- 完成了注册登录功能的重构
+- 写好了拦截器

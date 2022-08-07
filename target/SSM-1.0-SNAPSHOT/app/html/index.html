@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        *{
+            background-image: url("https://ts1.cn.mm.bing.net/th/id/R-C.762bf27a92227996b1696c11e04676f8?rik=pO8YFbUdT7ZqiA&riu=http%3a%2f%2fp7.qhimg.com%2ft01fdcdfd38952fa382.png&ehk=DEsLD60I7LKHzziggJOCT8hgJYcwPKYILT%2fES90aK%2fQ%3d&risl=&pid=ImgRaw&r=0");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            text-align: center;
+            margin: 30px;
+        }
+        /* 未被访问的链接 */
+        a:link {
+            color: #4d76ff;
+        }
+
+        /* 已被访问的链接 */
+        a:visited {
+            color: green;
+        }
+
+        /* 将鼠标悬停在链接上 */
+        a:hover {
+            color: #ff442e;
+        }
+
+        /* 被选择的链接 */
+        a:active {
+            color: #637aff;
+        }
+    </style>
+    <title>NERV</title>
+</head>
+<body>
+    <div id="top">
+        <h1>NERV</h1>
+        <hr>
+    </div>
+    <div id="login-area">
+        <span style="font-size: large">username:</span><input type="text" id="username" placeholder="username here..." v-model="userData.username"> <br>
+        <span style="font-size: large">password:</span><input type="password" id="password" placeholder="password here..." v-model="userData.password"> <br>
+        <a v-if="isLogin" @click="isLogin=!isLogin" style="font-size: medium">没有账号？去注册</a>
+        <a v-else  @click="isLogin=!isLogin" style="font-size: medium">已有帐号，去登陆</a>
+        <br>
+        <button v-if="isLogin" id="login" style="font-size: medium" @click="login">login</button>
+        <button v-else style="font-size: medium" @click="register">register</button>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#login-area",
+            data:{
+                isLogin:true,
+                userData:{
+                    username:'',
+                    password:''
+                },
+                url:{
+                    login:'http://localhost:8080/SSM_war_exploded/user/login',
+                    register:'http://localhost:8080/SSM_war_exploded/user/register'
+                }
+            },
+            created() {
+            },
+            methods:{
+                login() {
+                    axios({
+                        method: 'post',
+                        url: this.url.login,
+                        data: JSON.stringify(this.userData),
+                        headers: {
+                            'Content-Type': 'application/json;charset=UTF-8'
+                        }
+                    }).then(res=>{
+                        alert(res.data["msg"]);
+                        console.log(res.data);
+                        if(res.data["sign"]) {
+                            window.location.href=res.data["url"];
+                        }
+                    }).catch(err=>{
+                        console.log(err);
+                    })
+                },
+                register() {
+                    axios({
+                        method: 'post',
+                        url: this.url.register,
+                        data: JSON.stringify(this.userData),
+                        headers: {
+                            'Content-Type': 'application/json;charset=UTF-8'
+                        }
+                    }).then(res=>{
+                        console.log(res.data);
+                        alert(res.data["msg"]);
+                        if(res.data["res"]===1) this.login();
+                        else {
+                            this.userData.username='';
+                            this.userData.password='';
+                        }
+                    }).catch(err=>{
+                        console.log(err);
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>
