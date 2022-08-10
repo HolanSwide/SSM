@@ -8,7 +8,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-            margin: 30px;
+            margin: 20px;
         }
     </style>
     <title>Hello!</title>
@@ -18,7 +18,18 @@
 <body>
     <div id="userInfo">
         <h1>{{user.id}} - {{user.username}}</h1>
+        <button @click="toExit">EXIT</button> <br>
         <hr>
+    </div>
+    <div id="userAction">
+        <button @click="postData.pageBegin=1;getAll();isShow=!isShow">Check All Users</button> <br>
+        <ul v-if="isShow">
+            <li v-for="(user,index) in users" :key="index"
+                style="font-family: Consolas,serif;font-size: larger; margin:10px">
+                {{user.uid}} - {{user.username}} - {{user.password}}
+            </li>
+            <button @click="getNext">Next Page</button>
+        </ul>
     </div>
 
 <script>
@@ -27,6 +38,42 @@
         id:''
     };
     const url='http://localhost:8080/SSM_war_exploded/user/me';
+
+    new Vue({
+        el:'#userAction',
+        data:{
+            isShow:false,
+            users:[],
+            postData:{
+                type:null,
+                param:null,
+                pageSize:10,
+                pageBegin:1,
+                url:'http://localhost:8080/SSM_war_exploded/user/info'
+            }
+        },
+        methods:{
+            getNext() {
+                this.postData.pageBegin += 1;
+                this.getAll();
+            },
+            getAll() {
+                axios({
+                    method: 'post',
+                    url: this.postData.url,
+                    data: JSON.stringify(this.postData),
+                    headers: {
+                        'Content-Type': 'application/json;charset=UTF-8'
+                    }
+                }).then(res=>{
+                    console.log(res.data);
+                    if(res.data.length!==0) this.users = res.data;
+                }).catch(err=>{
+                    console.log(err);
+                });
+            }
+        }
+    });
 
     new Vue({
         el:'#userInfo',
@@ -54,6 +101,9 @@
         mounted() {
         },
         methods:{
+            toExit() {
+                window.location.href='http://localhost:8080/SSM_war_exploded/user/exit';
+            }
         }
     })
 </script>

@@ -1,4 +1,5 @@
 com\holanswide\homework\day03\RegisterDemo.class
+com\holanswide\service\UserService.class
 com\holanswide\mapper\UserMapImp.class
 com\holanswide\service\Register.class
 com\holanswide\test\day01.class
@@ -7,7 +8,9 @@ com\holanswide\service\Login.class
 com\holanswide\factory\SpringBean.class
 com\holanswide\homework\day03\RegController.class
 com\holanswide\model\User.class
+com\holanswide\controller\RegisterSendBody.class
 com\holanswide\controller\WebController.class
 com\holanswide\mapper\UserMap.class
 com\holanswide\interceptor\LoginInterceptor.class
+com\holanswide\controller\LoginSendBody.class
 com\holanswide\homework\day02\JdbcTemplateTest.class

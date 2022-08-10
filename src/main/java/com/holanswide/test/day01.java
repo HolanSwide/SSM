@@ -19,6 +19,6 @@ public class day01 {
     @Test
     public void MybatisXSpring() {
         UserMapImp umi = (UserMapImp) SpringBean.getAc().getBean("userMapImp",UserMapImp.class);
-        System.out.println(umi.queryUserAll());
+        System.out.println(umi.queryUserAll(1,10));
     }
 }

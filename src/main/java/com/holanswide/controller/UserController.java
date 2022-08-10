@@ -6,6 +6,7 @@ import com.holanswide.mapper.UserMapImp;
 import com.holanswide.model.User;
 import com.holanswide.service.Login;
 import com.holanswide.service.Register;
+import com.holanswide.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -26,6 +27,26 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping(value = "/user", produces = {"application/json;charset=UTF-8"})
 public class UserController {
+    @GetMapping("exit")
+    public String toExit(HttpServletRequest request) {
+        request.getSession().invalidate();
+        return "index";
+    }
+
+    @PostMapping("info")
+    public @ResponseBody
+    String getUserInfo(@RequestBody String obj, HttpServletRequest request, Model model) {
+        String type = JSON.parseObject(obj).getString("type");
+        String param= JSON.parseObject(obj).getString("param");
+        int pageSize = JSON.parseObject(obj).getIntValue("pageSize");
+        int pageBegin = JSON.parseObject(obj).getIntValue("pageBegin");
+        System.out.println(this.getClass()+" > "+type+" "+param+" "+pageBegin+" "+pageSize);
+        pageBegin = (pageBegin-1)*pageSize;
+        return JSON.toJSONString(
+                SpringBean.getAc().getBean("userService", UserService.class).getUsers(type,param,pageSize,pageBegin)
+        );
+    }
+
     @GetMapping("/me")
     public @ResponseBody
     String getMe(HttpServletRequest request) {

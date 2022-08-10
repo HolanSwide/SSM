@@ -28,14 +28,14 @@
 
 ## day03
 > 2022年6月25日16点11分
-
+                                    
 - 采用Vue框架重构
 
 ## day04
 > 2022年8月6日15点24分
 
-- 如何使Controller返回数据而非页面
 
+- 如何使Controller返回数据而非页面
 > 在对应方法体上添加注解`@ResponseBody`,
 > 同时要在`@RequestMapping`注解中加入参数`produces={"application/json;charset=UTF-8"}`以防止乱码
 
@@ -46,3 +46,8 @@
 
 - 完成了注册登录功能的重构
 - 写好了拦截器
+
+# day05
+> 2022年8月10日15点32分
+
+- 使用Vue+Element-ui进行前端重构

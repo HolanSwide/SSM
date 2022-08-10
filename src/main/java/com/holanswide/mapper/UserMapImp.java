@@ -20,8 +20,8 @@ public class UserMapImp implements UserMap {
     }
 
     @Override
-    public List<User> queryUserAll() {
-        return this.session.getMapper(UserMap.class).queryUserAll();
+    public List<User> queryUserAll(int pageBegin, int pageSize) {
+        return this.session.getMapper(UserMap.class).queryUserAll(pageBegin, pageSize);
     }
 
     @Override
