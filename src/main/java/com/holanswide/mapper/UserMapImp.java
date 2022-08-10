@@ -1,6 +1,7 @@
 package com.holanswide.mapper;
 
 import com.holanswide.model.User;
+import com.holanswide.model.UserInfo;
 import org.mybatis.spring.SqlSessionTemplate;
 
 import java.util.List;
@@ -30,6 +31,11 @@ public class UserMapImp implements UserMap {
     }
 
     @Override
+    public List<User> queryUserByInfo(String type, String key) {
+        return this.session.getMapper(UserMap.class).queryUserByInfo(type, key);
+    }
+
+    @Override
     public int addUser(User user) {
         // 检查数据是否非空
         if (user.getUsername() == null || user.getPassword() == null) return 3;
@@ -37,5 +43,12 @@ public class UserMapImp implements UserMap {
         // 检查用户名重复
         if (this.queryUserByUsername(user.getUsername()) != null) return 2;
         return this.session.getMapper(UserMap.class).addUser(user);
+    }
+
+    @Override
+    public int addUserInfo(UserInfo userInfo) {
+        if(this.queryUserByInfo("phone",userInfo.getPhone())!=null) return 4;
+        if(this.queryUserByInfo("email",userInfo.getEmail())!=null) return 5;
+        return this.session.getMapper(UserMap.class).addUserInfo(userInfo);
     }
 }

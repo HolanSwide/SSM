@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="http://localhost:8080/SSM_war_exploded/app/static/js/vue.js"></script>
+    <script src="../static/js/test.js"></script>
+    <title>Posts Menu</title>
+    <style>
+        *{
+            background-color: bisque;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Menu</h1><hr>
+<div id="passage">
+    <div id="post" style="text-align:center">
+        Title: <input type="text" v-model="pTitle"> <br><br>
+        Index: <textarea v-model="pIndex" @keyup.enter="submitPassage"></textarea> <br><br>
+        <button @click="submitPassage">Submit</button>
+        <button @click="resetPassage">ReSet</button>
+        <hr>
+    </div>
+
+    <div id="search" style="text-align:center; margin-top: 30px; margin-bottom: 30px; margin-right: 30px; margin-left: 30px;">
+        <input type="text" v-model="keyword" placeholder="search in...">
+        <hr>
+    </div>
+
+    <passage-blog style="margin-top: 10px; margin-bottom: 10px; margin-right: 30px; margin-left: 30px;"
+                  v-on:del-passage="delPassage"
+                  v-for="p in sortPsg"
+                  :key="p.id"
+                  :p="p"
+    ></passage-blog>
+</div>
+
+<script type="text/javascript" >
+    Vue.config.productionTip = false // 阻止警告提示
+
+    let dataPassages = [
+        {id:1,title:'hello',index:'jsdhkasdkj'},
+        {id:2,title:'vueJs',index:'jhqhdhjkanxnkjbdj'}
+    ]
+
+    let pasVue = new Vue({
+        el:"#passage",
+        data:{
+            pTitle:'title',
+            pIndex:'index',
+            passages:dataPassages,
+            keyword:'',
+            sortPsg:dataPassages
+        },
+        components:{
+            'passage-blog':{
+                props:['p'],
+                template: `
+                            <div class="passage-blog">
+                            <h3>{{p.id}}.{{p.title }}</h3>
+                            <p> {{p.index}} </p>
+                            <textarea v-model="p.index"></textarea>
+                            <button @click="$emit('del-passage',p.id)">Delet</button>
+                            <hr>
+                            </div>
+                        `
+            }
+        },
+        watch:{
+            keyword:{
+                immediate:true,
+                handler(oldName,newName){
+                    console.log("> "+newName+" | "+this.keyword)
+                    this.sortPsg = this.passages.filter((p)=>{
+                        return p.title.indexOf(this.keyword)!==-1 || p.index.indexOf(this.keyword)!==-1
+                    })
+                }
+            }
+        },
+        methods:{
+            submitPassage() {
+                if(this.pIndex!=''&&this.pTitle!='') {
+                    this.passages.push({id:this.passages.length+1,title:this.pTitle, index:this.pIndex})
+                    this.sortPsg = this.passages
+                    console.log(this.passages)
+                } else {
+                    window.alert("提示：信息不能为空")
+                }
+            },
+            resetPassage() {
+                this.pIndex=''
+                this.pTitle=''
+            },
+            delPassage(tmp) {
+                this.passages=this.passages.filter(function(p){
+                    return p.id!=tmp
+                })
+                this.sortPsg = this.passages
+                console.log(this.passages)
+            }
+        }
+    })
+
+
+</script>
+
+</body>
+</html>

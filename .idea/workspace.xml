@@ -2,109 +2,21 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="SSM:war exploded" />
+      <artifact name="SSM_war_exploded" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68ea054-e2cc-4981-8543-5d2d309b1d6b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/holanswide/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/js/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/static/img/login-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/static/img/login.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/app/static/img/login.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/holanswide/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/holanswide/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/holanswide/mapper/UserMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/holanswide/mapper/UserMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/holanswide/mapper/UserMapImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/holanswide/mapper/UserMapImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/holanswide/test/day01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/holanswide/test/day01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/html/hello.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/html/hello.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/WEB-INF/classes/com/holanswide/controller/LoginSendBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/WEB-INF/classes/com/holanswide/controller/LoginSendBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/WEB-INF/classes/com/holanswide/controller/RegisterSendBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/WEB-INF/classes/com/holanswide/controller/RegisterSendBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/WEB-INF/classes/com/holanswide/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/WEB-INF/classes/com/holanswide/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/WEB-INF/classes/com/holanswide/mapper/UserMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/WEB-INF/classes/com/holanswide/mapper/UserMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/WEB-INF/classes/com/holanswide/mapper/UserMapImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/WEB-INF/classes/com/holanswide/mapper/UserMapImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/WEB-INF/classes/com/holanswide/test/day01.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/WEB-INF/classes/com/holanswide/test/day01.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/WEB-INF/classes/mappers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/WEB-INF/classes/mappers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/app/html/hello.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/app/html/hello.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/app/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/SSM-1.0-SNAPSHOT/app/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/controller/LoginSendBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/controller/LoginSendBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/controller/RegisterSendBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/controller/RegisterSendBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/mapper/UserMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/mapper/UserMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/mapper/UserMapImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/mapper/UserMapImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/test/day01.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/test/day01.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-    </list>
+    <list default="true" id="57830567-5be5-4861-9dae-2661a4456da7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="ssm@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="ssm@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="ssm@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ssm: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="ssm@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ssm: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-    </expand>
-    <select />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Jsp File" />
-        <option value="HTML File" />
-        <option value="Class" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <execution />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -113,52 +25,28 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="E:/Apps/programming/apache-maven-3.8.4" />
-      </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Ayy3ko2WwamChaETlwe2bCLJbD" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2DAJlNVhBHgwV73fhru5Sa5yMxU" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../云上周测/SpringJDBC/SpringJDBC" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.13516897" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\code\Git\Spring\SSM\src\main\webapp\app" />
-      <recent name="D:\code\Git\Spring\SSM\src\main\webapp\static" />
-      <recent name="D:\code\Git\Spring\SSM\src\main\webapp\WEB-INF" />
-      <recent name="D:\code\Git\Spring\SSM\src\main\webapp\WEB-INF\jsp" />
-    </key>
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Project.color": "00195b",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/code/Git/Spring/ssm-new/SSM/src/main/webapp",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.16666667",
+    "spring.configuration.checksum": "a7885c51c567427cd74513f0c6e0d563"
+  }
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean" />
@@ -168,97 +56,21 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.731">
-    <configuration name="JDBCTemplateTest.Add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SSM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.holanswide.homework.day02.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.holanswide.homework.day02" />
-      <option name="MAIN_CLASS_NAME" value="com.holanswide.homework.day02.JDBCTemplateTest" />
-      <option name="METHOD_NAME" value="Add" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JDBCTemplateTest.del" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SSM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.holanswide.homework.day02.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.holanswide.homework.day02" />
-      <option name="MAIN_CLASS_NAME" value="com.holanswide.homework.day02.JDBCTemplateTest" />
-      <option name="METHOD_NAME" value="del" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JDBCTemplateTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SSM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.holanswide.homework.day02.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.holanswide.homework.day02" />
-      <option name="MAIN_CLASS_NAME" value="com.holanswide.homework.day02.JDBCTemplateTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JDBCTemplateTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SSM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.holanswide.homework.day02.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.holanswide.homework.day02" />
-      <option name="MAIN_CLASS_NAME" value="com.holanswide.homework.day02.JDBCTemplateTest" />
-      <option name="METHOD_NAME" value="update" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JdbcTemplateTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SSM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.holanswide.homework.day02.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.holanswide.homework.day02" />
-      <option name="MAIN_CLASS_NAME" value="com.holanswide.homework.day02.JdbcTemplateTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="hello.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SSM/src/main/webapp/app/html/hello.html" useBuiltInWebServerPort="true">
+      <method v="2" />
     </configuration>
     <configuration name="Tomcat 8.5.731" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.731" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="SSM:war exploded">
+        <artifact name="SSM_war_exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/SSM_war_exploded" />
+            <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_SSM" />
+        <option name="BASE_DIRECTORY_NAME" value="0ad156c2-3eb8-409a-8ec5-f48fe721aa55" />
+        <option name="HTTP_PORT" value="80" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -266,7 +78,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="56155" />
+        <option name="DEBUG_PORT" value="62987" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -316,276 +128,34 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="SSM:war exploded" />
+          <artifact name="SSM_war_exploded" />
         </option>
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.JDBCTemplateTest.del" />
-      <item itemvalue="JUnit.JDBCTemplateTest.Add" />
-      <item itemvalue="JUnit.JDBCTemplateTest.update" />
-      <item itemvalue="JUnit.JDBCTemplateTest.test" />
-      <item itemvalue="JUnit.JdbcTemplateTest.test" />
+      <item itemvalue="JavaScript Debug.hello.html" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.731" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JdbcTemplateTest.test" />
-        <item itemvalue="JUnit.JDBCTemplateTest.test" />
-        <item itemvalue="JUnit.JDBCTemplateTest.update" />
-        <item itemvalue="JUnit.JDBCTemplateTest.del" />
-        <item itemvalue="JUnit.JDBCTemplateTest.Add" />
+        <item itemvalue="JavaScript Debug.hello.html" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e68ea054-e2cc-4981-8543-5d2d309b1d6b" name="Default Changelist" comment="" />
-      <created>1655995922051</created>
+      <changelist id="57830567-5be5-4861-9dae-2661a4456da7" name="Changes" comment="" />
+      <created>1660136107159</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1655995922051</updated>
-      <workItem from="1655995926805" duration="4710000" />
-      <workItem from="1656039620805" duration="62000" />
-      <workItem from="1656042251120" duration="10543000" />
-      <workItem from="1656144536775" duration="1200000" />
-      <workItem from="1659314780659" duration="8323000" />
-      <workItem from="1659407179043" duration="4496000" />
-      <workItem from="1659441995260" duration="4385000" />
-      <workItem from="1659492772240" duration="9975000" />
-      <workItem from="1659660143973" duration="10732000" />
-      <workItem from="1659752515583" duration="22889000" />
-      <workItem from="1659849258846" duration="9284000" />
-      <workItem from="1660006930060" duration="5873000" />
-      <workItem from="1660029584298" duration="4718000" />
-      <workItem from="1660104083419" duration="4580000" />
+      <updated>1660136107159</updated>
+      <workItem from="1660136108607" duration="1149000" />
+      <workItem from="1660137303847" duration="2177000" />
     </task>
-    <task id="LOCAL-00001" summary="登录和注册">
-      <created>1656060509768</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1656060509768</updated>
-    </task>
-    <task id="LOCAL-00002" summary="work done">
-      <created>1659444420441</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1659444420441</updated>
-    </task>
-    <task id="LOCAL-00003" summary="重构Vue">
-      <created>1659703553054</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1659703553055</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="登录和注册" />
-    <MESSAGE value="work done" />
-    <MESSAGE value="重构Vue" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构Vue" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="617" y="249" key="#Template_Data_Languages" timestamp="1656045129065">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="617" y="249" key="#Template_Data_Languages/0.30.2048.1122@0.30.2048.1122" timestamp="1656045129065" />
-    <state x="479" y="246" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1659688988788">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="479" y="246" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659688988788" />
-    <state x="479" y="246" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.2048.1122@0.30.2048.1122" timestamp="1655997840637" />
-    <state x="749" y="380" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1660017558268">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="749" y="380" key="#com.intellij.fileTypes.FileTypeChooser/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1660017558268" />
-    <state x="830" y="307" key="#com.intellij.ide.util.MemberChooser" timestamp="1659791850903">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="830" y="307" key="#com.intellij.ide.util.MemberChooser/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659791850903" />
-    <state x="830" y="307" key="#com.intellij.ide.util.MemberChooser/0.30.2048.1122@0.30.2048.1122" timestamp="1656053730436" />
-    <state x="755" y="337" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1659689847599">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="755" y="337" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659689847599" />
-    <state x="695" y="177" key="#vueTest.html" timestamp="1656144895627">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="695" y="177" key="#vueTest.html/0.30.2048.1122@0.30.2048.1122" timestamp="1656144895627" />
-    <state x="616" y="94" key="CommitChangelistDialog2" timestamp="1659703551361">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="616" y="94" key="CommitChangelistDialog2/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659703551361" />
-    <state x="616" y="94" key="CommitChangelistDialog2/0.30.2048.1122@0.30.2048.1122" timestamp="1656060508579" />
-    <state x="805" y="346" key="FileChooserDialogImpl" timestamp="1659444969781">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="805" y="346" key="FileChooserDialogImpl/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659444969781" />
-    <state x="805" y="346" key="FileChooserDialogImpl/0.30.2048.1122@0.30.2048.1122" timestamp="1655997554648" />
-    <state width="1382" height="273" key="GridCell.Tab.0.bottom" timestamp="1660116278642">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="273" key="GridCell.Tab.0.bottom/0.30.2048.1122/-1920.348.1536.834@0.30.2048.1122" timestamp="1660116278642" />
-    <state width="2005" height="194" key="GridCell.Tab.0.bottom/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1660027163264" />
-    <state width="1382" height="207" key="GridCell.Tab.0.bottom/0.30.2048.1122@0.30.2048.1122" timestamp="1656061715021" />
-    <state width="1382" height="301" key="GridCell.Tab.0.bottom/0.62.2048.1090@0.62.2048.1090" timestamp="1656000552362" />
-    <state width="1382" height="273" key="GridCell.Tab.0.center" timestamp="1660116278642">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="273" key="GridCell.Tab.0.center/0.30.2048.1122/-1920.348.1536.834@0.30.2048.1122" timestamp="1660116278642" />
-    <state width="2005" height="194" key="GridCell.Tab.0.center/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1660027163264" />
-    <state width="1382" height="207" key="GridCell.Tab.0.center/0.30.2048.1122@0.30.2048.1122" timestamp="1656061715020" />
-    <state width="1382" height="301" key="GridCell.Tab.0.center/0.62.2048.1090@0.62.2048.1090" timestamp="1656000552362" />
-    <state width="1382" height="273" key="GridCell.Tab.0.left" timestamp="1660116278642">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="273" key="GridCell.Tab.0.left/0.30.2048.1122/-1920.348.1536.834@0.30.2048.1122" timestamp="1660116278642" />
-    <state width="2005" height="194" key="GridCell.Tab.0.left/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1660027163263" />
-    <state width="1382" height="207" key="GridCell.Tab.0.left/0.30.2048.1122@0.30.2048.1122" timestamp="1656061715020" />
-    <state width="1382" height="301" key="GridCell.Tab.0.left/0.62.2048.1090@0.62.2048.1090" timestamp="1656000552362" />
-    <state width="1382" height="273" key="GridCell.Tab.0.right" timestamp="1660116278642">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="273" key="GridCell.Tab.0.right/0.30.2048.1122/-1920.348.1536.834@0.30.2048.1122" timestamp="1660116278642" />
-    <state width="2005" height="194" key="GridCell.Tab.0.right/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1660027163264" />
-    <state width="1382" height="207" key="GridCell.Tab.0.right/0.30.2048.1122@0.30.2048.1122" timestamp="1656061715021" />
-    <state width="1382" height="301" key="GridCell.Tab.0.right/0.62.2048.1090@0.62.2048.1090" timestamp="1656000552362" />
-    <state width="1382" height="273" key="GridCell.Tab.1.bottom" timestamp="1660116278537">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="273" key="GridCell.Tab.1.bottom/0.30.2048.1122/-1920.348.1536.834@0.30.2048.1122" timestamp="1660116278537" />
-    <state width="1382" height="273" key="GridCell.Tab.1.bottom/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659867378338" />
-    <state width="1382" height="207" key="GridCell.Tab.1.bottom/0.30.2048.1122@0.30.2048.1122" timestamp="1656061715022" />
-    <state width="1382" height="301" key="GridCell.Tab.1.bottom/0.62.2048.1090@0.62.2048.1090" timestamp="1656000552120" />
-    <state width="1382" height="273" key="GridCell.Tab.1.center" timestamp="1660116278537">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="273" key="GridCell.Tab.1.center/0.30.2048.1122/-1920.348.1536.834@0.30.2048.1122" timestamp="1660116278537" />
-    <state width="1382" height="273" key="GridCell.Tab.1.center/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659867378337" />
-    <state width="1382" height="207" key="GridCell.Tab.1.center/0.30.2048.1122@0.30.2048.1122" timestamp="1656061715022" />
-    <state width="1382" height="301" key="GridCell.Tab.1.center/0.62.2048.1090@0.62.2048.1090" timestamp="1656000552119" />
-    <state width="1382" height="273" key="GridCell.Tab.1.left" timestamp="1660116278537">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="273" key="GridCell.Tab.1.left/0.30.2048.1122/-1920.348.1536.834@0.30.2048.1122" timestamp="1660116278537" />
-    <state width="1382" height="273" key="GridCell.Tab.1.left/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659867378337" />
-    <state width="1382" height="207" key="GridCell.Tab.1.left/0.30.2048.1122@0.30.2048.1122" timestamp="1656061715021" />
-    <state width="1382" height="301" key="GridCell.Tab.1.left/0.62.2048.1090@0.62.2048.1090" timestamp="1656000552119" />
-    <state width="1382" height="273" key="GridCell.Tab.1.right" timestamp="1660116278537">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="273" key="GridCell.Tab.1.right/0.30.2048.1122/-1920.348.1536.834@0.30.2048.1122" timestamp="1660116278537" />
-    <state width="1382" height="273" key="GridCell.Tab.1.right/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659867378338" />
-    <state width="1382" height="207" key="GridCell.Tab.1.right/0.30.2048.1122@0.30.2048.1122" timestamp="1656061715022" />
-    <state width="1382" height="301" key="GridCell.Tab.1.right/0.62.2048.1090@0.62.2048.1090" timestamp="1656000552120" />
-    <state width="1382" height="273" key="GridCell.Tab.2.bottom" timestamp="1660116278537">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="273" key="GridCell.Tab.2.bottom/0.30.2048.1122/-1920.348.1536.834@0.30.2048.1122" timestamp="1660116278537" />
-    <state width="1382" height="273" key="GridCell.Tab.2.bottom/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659867378338" />
-    <state width="1382" height="207" key="GridCell.Tab.2.bottom/0.30.2048.1122@0.30.2048.1122" timestamp="1656061715023" />
-    <state width="1382" height="301" key="GridCell.Tab.2.bottom/0.62.2048.1090@0.62.2048.1090" timestamp="1656000552120" />
-    <state width="1382" height="273" key="GridCell.Tab.2.center" timestamp="1660116278537">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="273" key="GridCell.Tab.2.center/0.30.2048.1122/-1920.348.1536.834@0.30.2048.1122" timestamp="1660116278537" />
-    <state width="1382" height="273" key="GridCell.Tab.2.center/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659867378338" />
-    <state width="1382" height="207" key="GridCell.Tab.2.center/0.30.2048.1122@0.30.2048.1122" timestamp="1656061715023" />
-    <state width="1382" height="301" key="GridCell.Tab.2.center/0.62.2048.1090@0.62.2048.1090" timestamp="1656000552120" />
-    <state width="1382" height="273" key="GridCell.Tab.2.left" timestamp="1660116278537">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="273" key="GridCell.Tab.2.left/0.30.2048.1122/-1920.348.1536.834@0.30.2048.1122" timestamp="1660116278537" />
-    <state width="1382" height="273" key="GridCell.Tab.2.left/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659867378338" />
-    <state width="1382" height="207" key="GridCell.Tab.2.left/0.30.2048.1122@0.30.2048.1122" timestamp="1656061715022" />
-    <state width="1382" height="301" key="GridCell.Tab.2.left/0.62.2048.1090@0.62.2048.1090" timestamp="1656000552120" />
-    <state width="1382" height="273" key="GridCell.Tab.2.right" timestamp="1660116278537">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="273" key="GridCell.Tab.2.right/0.30.2048.1122/-1920.348.1536.834@0.30.2048.1122" timestamp="1660116278537" />
-    <state width="1382" height="273" key="GridCell.Tab.2.right/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659867378338" />
-    <state width="1382" height="207" key="GridCell.Tab.2.right/0.30.2048.1122@0.30.2048.1122" timestamp="1656061715023" />
-    <state width="1382" height="301" key="GridCell.Tab.2.right/0.62.2048.1090@0.62.2048.1090" timestamp="1656000552120" />
-    <state width="1382" height="354" key="GridCell.Tab.3.bottom" timestamp="1659688724582">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="354" key="GridCell.Tab.3.bottom/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659688724582" />
-    <state width="1382" height="354" key="GridCell.Tab.3.center" timestamp="1659688724582">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="354" key="GridCell.Tab.3.center/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659688724582" />
-    <state width="1382" height="354" key="GridCell.Tab.3.left" timestamp="1659688724582">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="354" key="GridCell.Tab.3.left/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659688724582" />
-    <state width="1382" height="354" key="GridCell.Tab.3.right" timestamp="1659688724582">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state width="1382" height="354" key="GridCell.Tab.3.right/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659688724582" />
-    <state x="505" y="165" key="SettingsEditor" timestamp="1660029549053">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="505" y="165" key="SettingsEditor/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1660029549053" />
-    <state x="505" y="165" key="SettingsEditor/0.30.2048.1122@0.30.2048.1122" timestamp="1655996666375" />
-    <state x="807" y="503" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1659444444715">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="807" y="503" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659444444715" />
-    <state x="893" y="137" width="847" height="938" key="dock-window-1" timestamp="1659770917370">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="893" y="137" width="847" height="938" key="dock-window-1/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659770917370" />
-    <state x="755" y="342" key="extract.method.dialog" timestamp="1659495379458">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="755" y="342" key="extract.method.dialog/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659495379458" />
-    <state x="681" y="276" width="672" height="677" key="run.anything.popup" timestamp="1660104378937">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="681" y="276" width="672" height="677" key="run.anything.popup/0.30.2048.1122/-1920.348.1536.834@0.30.2048.1122" timestamp="1660104378937" />
-    <state x="681" y="276" width="672" height="677" key="run.anything.popup/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659689749216" />
-    <state x="687" y="276" width="672" height="678" key="search.everywhere.popup" timestamp="1659861505065">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="687" y="276" width="672" height="678" key="search.everywhere.popup/0.30.2048.1122/-1920.378.1536.834@0.30.2048.1122" timestamp="1659861505065" />
-    <state x="687" y="276" width="672" height="678" key="search.everywhere.popup/0.30.2048.1122@0.30.2048.1122" timestamp="1656000305905" />
-    <state x="705" y="189" key="spring file set editor" timestamp="1655996791335">
-      <screen x="0" y="30" width="2048" height="1122" />
-    </state>
-    <state x="705" y="189" key="spring file set editor/0.30.2048.1122@0.30.2048.1122" timestamp="1655996791335" />
+    <option name="version" value="3" />
   </component>
 </project>

@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.holanswide.factory.SpringBean;
 import com.holanswide.mapper.UserMapImp;
 import com.holanswide.model.User;
+import com.holanswide.model.UserInfo;
 import com.holanswide.service.Login;
 import com.holanswide.service.Register;
 import com.holanswide.service.UserService;
@@ -81,8 +82,10 @@ public class UserController {
     String register(@RequestBody String obj, Model model) {
         String username = JSON.parseObject(obj).getString("username");
         String password = JSON.parseObject(obj).getString("password");
-        SpringBean.getAc().getBean("register", Register.class).doRegister(username, password, model);
-        return JSON.toJSONString(new RegisterSendBody((String)model.getAttribute("msg"),(int)model.getAttribute("res")));
+        UserInfo userInfo = JSON.parseObject(obj).getObject("userInfo",UserInfo.class);
+        System.out.println(">UserInfo:"+userInfo);
+        SpringBean.getAc().getBean("register", Register.class).doRegister(username, password, userInfo, model);
+        return JSON.toJSONString(new RegisterSendBody((String)model.getAttribute("msg"), (Integer) model.getAttribute("res")));
     }
 }
 
@@ -92,7 +95,7 @@ class LoginSendBody {
     public User user;
     @Value("出现意外错误")
     public String msg;
-    @Value("http://localhost:8080/SSM_war_exploded/")
+    @Value("http://localhost/")
     public String url;
     @Value("true")
     public boolean sign;
@@ -108,7 +111,7 @@ class LoginSendBody {
     public LoginSendBody(User user, String msg, boolean sign) {
         this.user = user;
         this.msg = msg;
-        this.url = "http://localhost:8080/SSM_war_exploded/";
+        this.url = "http://localhost/";
         this.sign = sign;
     }
 
