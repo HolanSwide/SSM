@@ -56,7 +56,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         // handler是url请求访问的控制器（类）
         User user = (User)request.getSession().getAttribute("user");
         if(user == null) {
-            response.sendRedirect("http://localhost:8080/SSM_war_exploded/");
+            response.sendRedirect("http://localhost/");
             return false;
         }
         return true;

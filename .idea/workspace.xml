@@ -9,7 +9,73 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57830567-5be5-4861-9dae-2661a4456da7" name="Changes" comment="" />
+    <list default="true" id="57830567-5be5-4861-9dae-2661a4456da7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/app/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/app/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/app/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/app/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/app/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/app/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/controller/LoginSendBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/controller/LoginSendBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/controller/RegisterSendBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/controller/RegisterSendBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/controller/WebController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/controller/WebController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/factory/SpringBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/factory/SpringBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/homework/day02/JdbcTemplateTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/homework/day02/JdbcTemplateTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/homework/day03/RegController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/homework/day03/RegController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/homework/day03/RegisterDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/homework/day03/RegisterDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/interceptor/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/interceptor/LoginInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/mapper/UserMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/mapper/UserMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/mapper/UserMapImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/mapper/UserMapImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/model/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/model/UserInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/service/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/service/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/service/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/service/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/test/day01.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/com/holanswide/test/day01.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/mappers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/mappers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/WEB-INF/classes/springmvc-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/app/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/app/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/app/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/app/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/app/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SSM_war_exploded/app/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/holanswide/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/holanswide/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/holanswide/controller/WebController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/holanswide/controller/WebController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/holanswide/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/holanswide/interceptor/LoginInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/holanswide/mapper/UserMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/holanswide/mapper/UserMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/holanswide/mapper/UserMapImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/holanswide/mapper/UserMapImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/holanswide/service/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/holanswide/service/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/holanswide/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/holanswide/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springmvc-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/controller/LoginSendBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/controller/LoginSendBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/controller/RegisterSendBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/controller/RegisterSendBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/controller/WebController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/controller/WebController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/factory/SpringBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/factory/SpringBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/homework/day02/JdbcTemplateTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/homework/day02/JdbcTemplateTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/homework/day03/RegController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/homework/day03/RegController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/homework/day03/RegisterDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/homework/day03/RegisterDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/interceptor/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/interceptor/LoginInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/mapper/UserMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/mapper/UserMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/mapper/UserMapImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/mapper/UserMapImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/model/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/model/UserInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/service/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/service/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/service/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/service/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/holanswide/test/day01.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/holanswide/test/day01.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springmvc-config.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +83,16 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -29,6 +105,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2DAJlNVhBHgwV73fhru5Sa5yMxU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,10 +118,16 @@
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/code/Git/Spring/ssm-new/SSM/src/main/webapp",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.16666667",
-    "spring.configuration.checksum": "a7885c51c567427cd74513f0c6e0d563"
+    "settings.editor.selected.configurable": "inlay.hints",
+    "spring.configuration.checksum": "84de463c962ef350bdfd5b9a85c3b640"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RunAnythingCache">
@@ -57,6 +140,9 @@
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.731">
     <configuration name="hello.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SSM/src/main/webapp/app/html/hello.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/main/webapp/app/js/index.js" working-dir="$PROJECT_DIR$/src/main/webapp/app/js">
       <method v="2" />
     </configuration>
     <configuration name="Tomcat 8.5.731" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.731" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -134,10 +220,12 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.hello.html" />
+      <item itemvalue="Node.js.index.js" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.731" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.index.js" />
         <item itemvalue="JavaScript Debug.hello.html" />
       </list>
     </recent_temporary>
@@ -151,11 +239,21 @@
       <option name="presentableId" value="Default" />
       <updated>1660136107159</updated>
       <workItem from="1660136108607" duration="1149000" />
-      <workItem from="1660137303847" duration="2177000" />
+      <workItem from="1660137303847" duration="2523000" />
+      <workItem from="1660139845379" duration="2387000" />
+      <workItem from="1660183366288" duration="305000" />
+      <workItem from="1660183687170" duration="307000" />
+      <workItem from="1660184009609" duration="291000" />
+      <workItem from="1660184326723" duration="10901000" />
+      <workItem from="1660222897310" duration="6330000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

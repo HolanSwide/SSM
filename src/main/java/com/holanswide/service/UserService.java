@@ -21,4 +21,17 @@ public class UserService {
         }
         return null;
     }
+    public int changePwd(String phone, String pwd) {
+        int uid = SpringBean.getAc().getBean("userMapImp", UserMapImp.class).queryUidByPhone(phone);
+        User user = SpringBean.getAc().getBean("userMapImp", UserMapImp.class).queryUserByUid(uid);
+        if(user==null) {
+            return 0;
+            // 手机号不对应
+        }
+        else {
+            user.setPassword(pwd);
+            SpringBean.getAc().getBean("userMapImp", UserMapImp.class).updateUser(user);
+            return 1;
+        }
+    }
 }

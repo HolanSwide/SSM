@@ -44,6 +44,8 @@
                 <property name="exceptUrls">
                     <list>
                         <value>/app/html/index.html</value>
+                        <value>/app/html/reg.html</value>
+                        <value>/app/html/repass.html</value>
                     </list>
                 </property>
             </bean>

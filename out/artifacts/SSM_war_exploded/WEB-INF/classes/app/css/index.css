@@ -14,6 +14,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
+    opacity: 0.9;
 }
 #admin {
     position:absolute;
@@ -24,9 +25,10 @@ body {
     margin: auto;
     width: 100%;
     height: 250px;
-    background: rgb(179, 203, 182);
+    background: rgb(255, 255, 255);
     /* border-radius: 10%; */
-    /* box-shadow: 8px 10px 10px rgb(181, 27, 68); */
+     box-shadow: 8px 10px 10px rgb(181, 27, 68);
+    opacity: 0.9;
 }
 .adminh1 {
     margin: 20px 0;
@@ -39,12 +41,8 @@ body {
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
 }
 .pos {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    display:flex;
+    justify-content:center;
 }
 .demo-ruleForm {
     position: absolute;
@@ -81,4 +79,3 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
 }
-

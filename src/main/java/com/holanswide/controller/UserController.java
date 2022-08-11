@@ -80,12 +80,25 @@ public class UserController {
     @PostMapping("/register")
     public @ResponseBody
     String register(@RequestBody String obj, Model model) {
-        String username = JSON.parseObject(obj).getString("username");
-        String password = JSON.parseObject(obj).getString("password");
+        User user = JSON.parseObject(obj).getObject("user",User.class);
         UserInfo userInfo = JSON.parseObject(obj).getObject("userInfo",UserInfo.class);
+        String username = user.getUsername() ;
+        String password = user.getPassword() ;
         System.out.println(">UserInfo:"+userInfo);
         SpringBean.getAc().getBean("register", Register.class).doRegister(username, password, userInfo, model);
         return JSON.toJSONString(new RegisterSendBody((String)model.getAttribute("msg"), (Integer) model.getAttribute("res")));
+    }
+
+    @PostMapping("/repass.do")
+    public @ResponseBody
+    String repass(@RequestBody String obj) {
+        String phone = JSON.parseObject(obj).getString("phone");
+        String password = JSON.parseObject(obj).getString("password");
+        int res =
+                SpringBean.getAc().getBean("userService",UserService.class).changePwd(phone,password);
+        String msg = "修改成功！";
+        if(res==0) msg = "未找到该手机号，请检查输入或注册";
+        return JSON.toJSONString(new RepassSendBody(res,msg));
     }
 }
 
@@ -124,7 +137,6 @@ class LoginSendBody {
     }
 }
 
-
 class RegisterSendBody {
     String msg;
     int res;
@@ -148,5 +160,31 @@ class RegisterSendBody {
 
     public void setRes(int res) {
         this.res = res;
+    }
+}
+
+class RepassSendBody {
+    int res;
+    String msg;
+
+    public RepassSendBody(int res, String msg) {
+        this.res = res;
+        this.msg = msg;
+    }
+
+    public int getRes() {
+        return res;
+    }
+
+    public void setRes(int res) {
+        this.res = res;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }

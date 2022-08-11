@@ -5,8 +5,8 @@ new Vue({
             if (value === "") {
                 callback(new Error("请输入用户信息"));
             } else {
-                if (this.ruleForm.checkPass !== "") {
-                    this.$refs.ruleForm.validateField("checkPass");
+                if (this.userData.password !== "") {
+                    this.$refs.userData.validateField("password");
                 }
                 callback();
             }
@@ -27,8 +27,8 @@ new Vue({
                 checkPass: "",
             },
             rules: {
-                pass: [{ validator: validatePass, trigger: "blur" }],
-                checkPass: [{ validator: validatePass2, trigger: "blur" }],
+               username: [{ validator: validatePass, trigger: "blur" }],
+                password: [{ validator: validatePass2, trigger: "blur" }],
             },
             isLogin:true,
             userData:{
@@ -56,15 +56,14 @@ new Vue({
             }).then(res=>{
                 if(res.data["sign"]) {
                     this.$message({
-                        message:res.data["msg"],
+                        message:res.data["msg"]+" 3秒后跳转...",
                         type:'success',
                         showClose:true,
                         duration:0
                     });
-                    setTimeout(() => {
-                        this.loading = false;
-                    }, 2000);
-                    window.location.href=res.data["url"];
+                    setTimeout(function () {
+                        location.href=res.data["url"];
+                    }, 3000);
                 } else {
                     this.loading=false;
                     this.$message.error({
@@ -72,26 +71,6 @@ new Vue({
                         showClose: true,
                         duration: 0
                     });
-                }
-            }).catch(err=>{
-                console.log(err);
-            })
-        },
-        register() {
-            axios({
-                method: 'post',
-                url: this.url.register,
-                data: JSON.stringify(this.userData),
-                headers: {
-                    'Content-Type': 'application/json;charset=UTF-8'
-                }
-            }).then(res=>{
-                console.log(res.data);
-                alert(res.data["msg"]);
-                if(res.data["res"]===1) this.login();
-                else {
-                    this.userData.username='';
-                    this.userData.password='';
                 }
             }).catch(err=>{
                 console.log(err);

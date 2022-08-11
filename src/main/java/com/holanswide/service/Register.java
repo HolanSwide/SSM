@@ -15,7 +15,7 @@ import org.springframework.ui.Model;
 
 @Service
 public class Register {
-    public String doRegister(String username, String password, UserInfo userInfo, Model model) {
+    public void doRegister(String username, String password, UserInfo userInfo, Model model) {
         System.out.println(this.getClass() + " >Register - Username:" + username + " Password:" + password);
         User user = (User) SpringBean.getAc().getBean("user", User.class);
         user.setUsername(username);
@@ -24,6 +24,7 @@ public class Register {
         int res = umi.addUser(user);
         if (res == 1) {
             res = umi.addUserInfo(userInfo);
+            user = umi.queryUserByUsername(username);
         }
         String msg = null;
         switch (res) {
@@ -32,19 +33,22 @@ public class Register {
                 break;
             case 2:
                 msg = "用户名重复！";
+                umi.delUserByUid(user.getUid());
                 break;
             case 4:
                 msg = "手机号已被注册！";
+                umi.delUserByUid(user.getUid());
                 break;
             case 5:
                 msg="邮箱已被注册！";
+                umi.delUserByUid(user.getUid());
                 break;
             default:
                 msg = "注册失败，请重试...";
+                umi.delUserByUid(user.getUid());
                 break;
         }
         model.addAttribute("msg", msg);
         model.addAttribute("res", res);
-        return "index";
     }
 }

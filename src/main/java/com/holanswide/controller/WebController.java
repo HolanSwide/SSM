@@ -21,8 +21,8 @@ public class WebController {
     @RequestMapping("/")
     public String toIndex(HttpServletRequest request, HttpServletResponse response) {
         User user = (User) request.getSession().getAttribute("user");
-        System.out.println(this.getClass()+" > Session:"+user);
-        if(user==null) {
+        System.out.println(this.getClass() + " > Session:" + user);
+        if (user == null) {
             return "index";
         } else {
             return "hello";
@@ -30,4 +30,13 @@ public class WebController {
 
     }
 
+    @RequestMapping("/reg")
+    public String toReg(HttpServletRequest request, HttpServletResponse response) {
+        return "reg";
+    }
+
+    @RequestMapping("/repass")
+    public String toRePass(HttpServletRequest request, HttpServletResponse response) {
+        return "repass";
+    }
 }

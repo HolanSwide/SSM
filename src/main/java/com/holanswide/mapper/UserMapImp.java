@@ -36,6 +36,16 @@ public class UserMapImp implements UserMap {
     }
 
     @Override
+    public User queryUserByUid(int uid) {
+        return this.session.getMapper(UserMap.class).queryUserByUid(uid);
+    }
+
+    @Override
+    public int queryUidByPhone(String phone) {
+        return this.session.getMapper(UserMap.class).queryUidByPhone(phone);
+    }
+
+    @Override
     public int addUser(User user) {
         // 检查数据是否非空
         if (user.getUsername() == null || user.getPassword() == null) return 3;
@@ -47,8 +57,20 @@ public class UserMapImp implements UserMap {
 
     @Override
     public int addUserInfo(UserInfo userInfo) {
-        if(this.queryUserByInfo("phone",userInfo.getPhone())!=null) return 4;
-        if(this.queryUserByInfo("email",userInfo.getEmail())!=null) return 5;
+        System.out.println(this.queryUserByInfo("phone",userInfo.getPhone()));
+        if(!this.queryUserByInfo("phone",userInfo.getPhone()).isEmpty()) return 4;
+        if(!this.queryUserByInfo("email",userInfo.getEmail()).isEmpty()) return 5;
         return this.session.getMapper(UserMap.class).addUserInfo(userInfo);
+    }
+
+    @Override
+    public void delUserByUid(int uid) {
+        if(this.session.getMapper(UserMap.class).queryUserByUid(uid)!=null)
+            this.session.getMapper(UserMap.class).delUserByUid(uid);
+    }
+
+    @Override
+    public void updateUser(User user) {
+        this.session.getMapper(UserMap.class).updateUser(user);
     }
 }
