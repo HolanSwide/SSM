@@ -25,7 +25,7 @@ public class WebController {
         if (user == null) {
             return "index";
         } else {
-            return "hello";
+            return "main";
         }
 
     }
@@ -39,4 +39,7 @@ public class WebController {
     public String toRePass(HttpServletRequest request, HttpServletResponse response) {
         return "repass";
     }
+
+    @RequestMapping("/test")
+    public String toTest(HttpServletRequest request, HttpServletResponse response) {return "vueTest";}
 }

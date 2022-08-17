@@ -1,5 +1,7 @@
 package com.holanswide.mapper;
 
+import com.holanswide.model.AllInfo;
+import com.holanswide.model.Rights;
 import com.holanswide.model.User;
 import com.holanswide.model.UserInfo;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -18,6 +20,21 @@ public class UserMapImp implements UserMap {
     //必须要有Set方法
     public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
         this.session = sqlSessionTemplate;
+    }
+
+    @Override
+    public List<AllInfo> queryAllInfo() {
+        return this.session.getMapper(UserMap.class).queryAllInfo();
+    }
+
+    @Override
+    public UserInfo queryUserInfoByUid(int uid) {
+        return this.session.getMapper(UserMap.class).queryUserInfoByUid(uid);
+    }
+
+    @Override
+    public List<UserInfo> queryUserInfoAll(int pageBegin, int pageSize) {
+        return this.session.getMapper(UserMap.class).queryUserInfoAll(pageBegin, pageSize);
     }
 
     @Override
@@ -46,6 +63,11 @@ public class UserMapImp implements UserMap {
     }
 
     @Override
+    public List<Integer> queryAllUid() {
+        return this.session.getMapper(UserMap.class).queryAllUid();
+    }
+
+    @Override
     public int addUser(User user) {
         // 检查数据是否非空
         if (user.getUsername() == null || user.getPassword() == null) return 3;
@@ -70,7 +92,32 @@ public class UserMapImp implements UserMap {
     }
 
     @Override
+    public void delUserInfoByUid(int uid) {
+        this.session.getMapper(UserMap.class).delUserInfoByUid(uid);
+    }
+
+    @Override
     public void updateUser(User user) {
         this.session.getMapper(UserMap.class).updateUser(user);
+    }
+
+    @Override
+    public void updateRights(Rights rights) {
+        this.session.getMapper(UserMap.class).updateRights(rights);
+    }
+
+    @Override
+    public void addRights(Rights rights) {
+        this.session.getMapper(UserMap.class).addRights(rights);
+    }
+
+    @Override
+    public int queryRightByUid(int uid) {
+        return this.session.getMapper(UserMap.class).queryRightByUid(uid);
+    }
+
+    @Override
+    public String queryCodeByUid(int uid) {
+        return this.session.getMapper(UserMap.class).queryCodeByUid(uid);
     }
 }

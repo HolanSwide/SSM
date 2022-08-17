@@ -2,31 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>VueTest</title>
+    <title>Welcome!</title>
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- 引入element样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入element组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="http://localhost/app/css/repass.css">
 </head>
 <body>
-<div id="vue_det">
-    <h1>site : {{site}}</h1>
-    <h1>url : {{url}}</h1>
-    <h1>{{details()}}</h1>
-</div>
-</body>
 
-<script src="../js/vue.js"></script>
-<script type="text/javascript">
-    var vm = new Vue({
-        el: '#vue_det',
-        data: {
-            site: "菜鸟教程",
-            url: "www.runoob.com",
-            alexa: "10000"
-        },
-        methods: {
-            details: function() {
-                return  this.site + " - 学的不仅是技术，更是梦想！";
-            }
-        }
-    })
-</script>
+<div id="app">
+    <div id="main">
+        <el-upload
+                class="upload-demo"
+                ref="upload"
+                name="files"
+                action="http://localhost/file/upload"
+                limit="1"
+                :on-success="handleSuccess"
+                :on-preview="handlePreview"
+                :on-remove="handleRemove"
+                :file-list="fileList"
+                :auto-upload="false">
+            <el-button id="fileButton" size="small" type="primary">选取文件</el-button>
+            <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
+        </el-upload>
+    </div>
+</div>
+<script src="http://localhost/app/js/main.js"></script>
+
+</body>
 
 </html>

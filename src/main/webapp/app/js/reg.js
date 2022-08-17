@@ -23,25 +23,26 @@ new Vue({
         return {
             loading:false,
             url:'http://localhost/user/register',
-        active:0,
-        rules: {
-            username: [{ validator: validatePass, trigger: "blur" }],
-            password: [{ validator: validatePass2, trigger: "blur" }],
-          },
-        sendData:{
-            user:{
-                username:'',
-                password:''
+            active:0,
+            rules: {
+                username: [{ validator: validatePass, trigger: "blur" }],
+                password: [{ validator: validatePass2, trigger: "blur" }],
+              },
+            sendData:{
+                user:{
+                    username:'',
+                    password:''
+                },
+                userInfo:{
+                    uid:'1',
+                    phone:'',
+                    email:'',
+                    sex:'',
+                    born:''
+                }
             },
-            userInfo:{
-                uid:'1',
-                phone:'',
-                email:'',
-                sex:'',
-                born:''
-            }
+            file:''
         }
-    }
     },
     methods: {
         submitInfo() {

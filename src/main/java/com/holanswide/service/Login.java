@@ -1,11 +1,10 @@
 package com.holanswide.service;
 
-import com.holanswide.factory.SpringBean;
+import com.holanswide.utils.SpringBean;
 import com.holanswide.mapper.UserMapImp;
 import com.holanswide.model.User;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author ：holan

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.holanswide.mapper.FileMapper">
+
+    <insert id="addFile">
+        insert into file(url,uid,filename,`describe`,type,memory)
+            values(#{url},#{uid},#{filename},#{describe},#{type},#{memory});
+    </insert>
+    <delete id="delFileByURL">
+        delete from file where `url`=#{url};
+    </delete>
+    <select id="queryFileInfoByUid" resultType="com.holanswide.model.FileInfo">
+        select `url`,`filename`,`describe`,`type`,`memory` from file
+                                                           where `uid`=${uid};
+    </select>
+    <select id="queryFileInfoAll" resultType="com.holanswide.model.FileInfo">
+        select url, uid, filename, `describe`, type, memory from file;
+    </select>
+</mapper>

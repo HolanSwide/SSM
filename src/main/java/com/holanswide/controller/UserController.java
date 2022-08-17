@@ -1,8 +1,11 @@
 package com.holanswide.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.holanswide.factory.SpringBean;
+import com.holanswide.mapper.UserMap;
 import com.holanswide.mapper.UserMapImp;
+import com.holanswide.model.AllInfo;
+import com.holanswide.model.Rights;
+import com.holanswide.utils.SpringBean;
 import com.holanswide.model.User;
 import com.holanswide.model.UserInfo;
 import com.holanswide.service.Login;
@@ -16,8 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * @author ：holan
@@ -28,13 +30,43 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping(value = "/user", produces = {"application/json;charset=UTF-8"})
 public class UserController {
-    @GetMapping("exit")
+    @GetMapping(value = "/del",produces = {"application/json;charset=UTF-8"})
+    public @ResponseBody
+    String delUser(@RequestParam("uid") int uid) {
+        SpringBean.getAc().getBean("userMapImp", UserMapImp.class).delUserByUid(uid);
+        SpringBean.getAc().getBean("userMapImp", UserMapImp.class).delUserInfoByUid(uid);
+        return "删除成功";
+    }
+    @GetMapping(value = "/all",produces = {"application/json;charset=UTF-8"})
+    public @ResponseBody
+    String getAll() {
+        return JSON.toJSONString(
+                SpringBean.getAc().getBean("userMapImp", UserMapImp.class).queryAllInfo()
+        );
+    }
+    @GetMapping("/type")
+    public @ResponseBody
+    String getType(@RequestParam(name = "uid",required = true) int uid) {
+        return JSON.toJSONString(
+                SpringBean.getAc().getBean("userMapImp", UserMapImp.class).queryRightByUid(uid)
+        );
+    }
+    @GetMapping("/myinfo")
+    public @ResponseBody
+    String getMyInfo(HttpServletRequest request) {
+        User me = (User) request.getSession().getAttribute("user");
+        System.out.println(this.getClass()+" > "+me);
+        return JSON.toJSONString(
+                SpringBean.getAc().getBean("userMapImp", UserMapImp.class).queryUserInfoByUid(me.getUid())
+        );
+    }
+    @GetMapping("/exit")
     public String toExit(HttpServletRequest request) {
         request.getSession().invalidate();
         return "index";
     }
 
-    @PostMapping("info")
+    @PostMapping("/info")
     public @ResponseBody
     String getUserInfo(@RequestBody String obj, HttpServletRequest request, Model model) {
         String type = JSON.parseObject(obj).getString("type");

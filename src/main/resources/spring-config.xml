@@ -52,7 +52,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
-        <property name="mapperLocations" value="classpath:mappers.xml"/>
+        <property name="mapperLocations" value="classpath:mappers/*.xml"/>
     </bean>
 
     <!--    SqlSession模板-->
@@ -65,10 +65,15 @@
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
 
+    <bean id="fileMapImp" class="com.holanswide.mapper.FileMapImp">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+
     <!--配置声明式事务-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
+
 
     <!--结合AOP实现事务自动化-->
     <!-- 1.配置事务的类     -->

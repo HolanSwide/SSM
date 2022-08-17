@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- 引入element样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入element组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="http://localhost/app/css/main.css">
+</head>
+<body>
+
+<div id="app">
+    <div id="main">
+        <el-container>
+            <el-header>
+                <div id="head-img">
+                    <el-image src="http://localhost/app/static/img/head.png"></el-image>
+                </div>
+                <el-avatar id="ava-img" src="https://attach.bbs.miui.com/forum/201204/03/181511xzzf1ibk8jz99ffx.jpg"></el-avatar>
+            </el-header>
+            <el-container>
+                <el-aside width="200px">
+                    <div id="aside-menu">
+                        <el-row class="tac">
+                            <el-col :span="24">
+                                <el-menu
+                                        default-active="1"
+                                        class="el-menu-vertical-demo"
+                                        @select="handleSelect"
+                                        @open="handleOpen"
+                                        background-color="#314e3f"
+                                        text-color="#fff"
+                                        active-text-color="#ffd04b">
+                                    <el-menu-item index="1">
+                                        <i class="el-icon-location"></i>
+                                        <span>首页</span>
+                                    </el-menu-item>
+                                    <el-menu-item index="2">
+                                        <i class="el-icon-menu"></i>
+                                        <span slot="title">上传</span>
+                                    </el-menu-item>
+                                    <el-menu-item index="3" :disabled="manaDisabled">
+                                        <i class="el-icon-document"></i>
+                                        <span slot="title">管理</span>
+                                    </el-menu-item>
+                                    <el-menu-item index="4">
+                                        <i class="el-icon-setting"></i>
+                                        <span slot="title">账号</span>
+                                    </el-menu-item>
+                                </el-menu>
+                            </el-col>
+                        </el-row>
+                    </div>
+                </el-aside>
+                <el-main v-loading="loading">
+                    <transition name="el-fade-in">
+                        <div id="home-page" v-if="aside==1">
+                            <div id="search-area">
+                                <el-input
+                                        v-model="key"
+                                        placeholder="搜索我上传的文件..."
+                                        clearable>
+                                </el-input>
+                            </div>
+                            <div style="margin: 20px;"></div>
+                            <el-table
+                                    :data="files"
+                                    max-height="600"
+                                    :row-style="{height: '20'}"
+                                    :cell-style="{padding: '20'}"
+                                    border
+                                    @cell-click="doFile"
+                                    style="width: 100%">
+                                <el-table-column
+                                        fixed
+                                        label="文件名称"
+                                        width="320"
+                                prop="filename">
+                                </el-table-column>
+                                <el-table-column
+                                        label="文件格式"
+                                        width="150"
+                                prop="type">
+                                </el-table-column>
+                                <el-table-column
+                                        label="备注说明"
+                                        width="650"
+                                prop="describe">
+                                </el-table-column>
+                                <el-table-column
+                                        label="文件大小"
+                                        width="170"
+                                prop="memory">
+                                </el-table-column>
+                            </el-table>
+                        </div>
+                    </transition>
+
+                        <el-dialog
+                                title="提示"
+                                :visible.sync="dialogVisible"
+                                width="25%"
+                                :before-close="handleClose">
+                            <span>请选择对文件{{diaData.filename}}的操作</span>
+                            <span slot="footer" class="dialog-footer">
+                            <el-button @click="dialogVisible = false">取 消</el-button>
+                            <el-button type="primary" @click="downloadFile">下 载</el-button>
+                                <el-button type="danger" @click="deleteFile">删 除</el-button>
+                          </span>
+                        </el-dialog>
+
+                    <transition name="el-fade-in">
+                        <div id="upfile" v-if="aside==2">
+                            <el-upload
+                                    class="upload-demo"
+                                    ref="upload"
+                                    name="files"
+                                    action="http://localhost/file/upload"
+                                    limit="1"
+                                    :on-change="handleBeforeUpload"
+                                    :on-success="handleSuccess"
+                                    :on-preview="handlePreview"
+                                    :on-remove="handleRemove"
+                                    :file-list="fileList"
+                                    :auto-upload="false">
+                                <el-button id="fileButton" size="small" type="primary">选取文件</el-button>
+                                <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
+                            </el-upload>
+                        </div>
+                    </transition>
+
+                    <transition name="el-fade-in">
+                        <div id="info" v-if="aside==2">
+                            <el-form label-position="right" label-width="80px" :model="sendData.fileInfo">
+                                <el-form-item label="文件名称">
+                                    <el-input v-model="sendData.fileInfo.filename"></el-input>
+                                </el-form-item>
+                                <el-form-item label="备注说明">
+                                    <el-input type="textarea" v-model="sendData.fileInfo.describe"></el-input>
+                                </el-form-item>
+                                <el-form-item label="文件格式">
+                                    <el-input v-model="sendData.fileInfo.type"></el-input>
+                                </el-form-item>
+                            </el-form>
+                        </div>
+                    </transition>
+
+                    <transition name="el-fade-in">
+                        <div id="manager" v-if="aside==3">
+                            <el-tabs>
+                                <el-tab-pane label="用户管理" name="first" v-if="userInfo.type<2">
+
+                                    <div id="search-user-area">
+                                        <el-input
+                                                v-model="keyUser"
+                                                placeholder="搜索用户和信息..."
+                                                clearable>
+                                        </el-input>
+                                    </div>
+                                    <div style="margin: 20px;"></div>
+                                    <el-table
+                                            :data="userList"
+                                            max-height="600"
+                                            :row-style="{height: '20'}"
+                                            :cell-style="{padding: '20'}"
+                                            border
+                                            @cell-click="doUser"
+                                            style="width: 100%">
+                                        <el-table-column
+                                                fixed
+                                                label="用户id"
+                                                width="150"
+                                                prop="uid">
+                                        </el-table-column>
+                                        <el-table-column
+                                                label="用户名"
+                                                width="150"
+                                                prop="username">
+                                        </el-table-column>
+                                        <el-table-column
+                                                label="权限"
+                                                width="150"
+                                                prop="type">
+                                        </el-table-column>
+                                        <el-table-column
+                                                label="注册电话"
+                                                width="170"
+                                                prop="phone">
+                                        </el-table-column>
+                                        <el-table-column
+                                                label="注册邮箱"
+                                                width="230"
+                                                prop="email">
+                                        </el-table-column>
+                                        <el-table-column
+                                                label="出生日期"
+                                                width="270"
+                                                prop="born">
+                                        </el-table-column>
+                                        <el-table-column
+                                                label="性别"
+                                                width="170"
+                                                prop="sex">
+                                        </el-table-column>
+                                    </el-table>
+
+                                    <el-dialog
+                                            title="提示"
+                                            :visible.sync="userDiaData.isShow"
+                                            width="25%"
+                                            :before-close="handleClose">
+                                        <span>请选择对用户(id:{{userDiaData.uid}})的操作</span>
+                                        <span slot="footer" class="dialog-footer">
+                                            <el-button @click="userDiaData.isShow = false">取 消</el-button>
+                                                <el-button type="danger" @click="deleteUser">删 除</el-button>
+                                          </span>
+                                    </el-dialog>
+
+                                </el-tab-pane>
+
+                                <el-tab-pane label="文件管理" name="second">
+
+                                    <transition name="el-fade-in">
+                                        <div id="allfile" v-if="userInfo.type<3">
+                                            <div id="search-file-area">
+                                                <el-input
+                                                        v-model="keyAllFile"
+                                                        placeholder="搜索服务器内所有文件..."
+                                                        clearable>
+                                                </el-input>
+                                            </div>
+                                            <div style="margin: 20px;"></div>
+                                            <el-table
+                                                    :data="allFiles"
+                                                    max-height="600"
+                                                    :row-style="{height: '20'}"
+                                                    :cell-style="{padding: '20'}"
+                                                    border
+                                                    @cell-click="doFile"
+                                                    style="width: 100%">
+                                                <el-table-column
+                                                        fixed
+                                                        label="文件名称"
+                                                        width="320"
+                                                        prop="filename">
+                                                </el-table-column>
+                                                <el-table-column
+                                                        label="文件格式"
+                                                        width="150"
+                                                        prop="type">
+                                                </el-table-column>
+                                                <el-table-column
+                                                        label="备注说明"
+                                                        width="650"
+                                                        prop="describe">
+                                                </el-table-column>
+                                                <el-table-column
+                                                        label="文件大小"
+                                                        width="170"
+                                                        prop="memory">
+                                                </el-table-column>
+                                            </el-table>
+                                        </div>
+                                    </transition>
+
+                                    <el-dialog
+                                            title="提示"
+                                            :visible.sync="dialogVisible"
+                                            width="25%"
+                                            :before-close="handleClose">
+                                        <span>请选择对文件{{diaData.filename}}的操作</span>
+                                        <span slot="footer" class="dialog-footer">
+                                        <el-button @click="dialogVisible = false">取 消</el-button>
+                                        <el-button type="primary" @click="downloadFile">下 载</el-button>
+                                            <el-button type="danger" @click="deleteOtherFile">删 除</el-button>
+                                      </span>
+                                    </el-dialog>
+
+                                </el-tab-pane>
+                                <el-tab-pane label="角色管理" name="third">
+                                    角色管理
+                                </el-tab-pane>
+                            </el-tabs>
+                        </div>
+                    </transition>
+
+                    <transition name="el-fade-in">
+                        <div id="settings" v-if="aside==4">
+                            <el-tabs>
+                                <el-tab-pane label="账号信息" name="first">
+
+                                    <el-form
+                                            status-icon
+                                            ref="userInfo"
+                                            label-width="100px"
+                                            class="info-style"
+                                            :label-position="right"
+                                    >
+                                        <el-form-item label="用户名：">
+                                            <el-input
+                                                    prefix-icon="el-icon-user"
+                                                    style="width: 250px"
+                                                    type="text"
+                                                    v-model="checkForm.user.username"
+                                                    autocomplete="off"
+                                            ></el-input>
+                                        </el-form-item>
+                                        <el-form-item label="手机号：" prop="phone">
+                                            <el-input
+                                                    prefix-icon="el-icon-user"
+                                                    style="width: 250px"
+                                                    type="text"
+                                                    v-model="userInfo.phone"
+                                                    autocomplete="off"
+                                            ></el-input>
+                                        </el-form-item>
+                                        <el-form-item label="邮箱：" prop="email">
+                                            <el-input
+                                                    prefix-icon="el-icon-message"
+                                                    style="width: 250px"
+                                                    type="text"
+                                                    v-model="userInfo.email"
+                                                    autocomplete="off"
+                                            ></el-input>
+                                        </el-form-item>
+                                        <el-form-item label="性别：" prop="sex">
+                                            <el-radio v-model="userInfo.sex" label="1">男</el-radio>
+                                            <el-radio v-model="userInfo.sex" label="2">女</el-radio>
+                                            <el-radio v-model="userInfo.sex" label="3">保密</el-radio>
+                                        </el-form-item>
+                                        <el-form-item label="生日：" prop="born">
+                                            <el-col :span="28">
+                                                <el-date-picker type="date" placeholder="选择日期" v-model="userInfo.born" style="width: 80%;"></el-date-picker>
+                                            </el-col>
+                                        </el-form-item>
+                                    </el-form>
+
+                                </el-tab-pane>
+                                <el-tab-pane label="修改密码" name="second">
+                                    <div style="margin: 20px;"></div>
+                                    <div style="margin: 20px;width: 75%">
+                                        <el-form :model="checkForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+                                            <el-form-item label="原密码" >
+                                                <el-input type="password" v-model="checkForm.oldPassword" autocomplete="off"></el-input>
+                                            </el-form-item>
+                                            <el-form-item label="新密码" prop="pass" >
+                                                <el-input type="password" v-model="checkForm.user.password" autocomplete="off"></el-input>
+                                            </el-form-item>
+                                            <el-form-item label="确认密码" prop="checkPass" >
+                                                <el-input type="password" v-model="rePassword"></el-input>
+                                            </el-form-item>
+                                            <el-form-item>
+                                                <el-button type="primary" @click="repass">提交</el-button>
+                                                <el-button native-type="reset" type="success" >重置</el-button>
+                                            </el-form-item>
+                                        </el-form>
+                                    </div>
+                                </el-tab-pane>
+                                <el-tab-pane label="兑换码" name="third">
+                                    <el-input type="textarea" v-model="regCode" placeholder="请输入内容"></el-input>
+                                    <div style="margin: 20px;"></div>
+                                    <el-button type="primary">提交</el-button>
+                                </el-tab-pane>
+                                <el-tab-pane label="退出登录" name="fourth">
+                                    <div style="margin: 60px;"></div>
+                                    <el-button v-loading="loading" type="danger" @click="toExit">退出</el-button>
+                                </el-tab-pane>
+                            </el-tabs>
+                        </div>
+                    </transition>
+
+                </el-main>
+            </el-container>
+        </el-container>
+    </div>
+</div>
+<script src="http://localhost/app/js/main.js"></script>
+
+</body>
+
+</html>

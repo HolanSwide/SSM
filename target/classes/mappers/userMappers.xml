@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.holanswide.mapper.UserMap">
+    <insert id="addUser">
+        insert into user(username, password) VALUES (#{username},#{password});
+    </insert>
+    <insert id="addUserInfo">
+        insert into user_info(uid, phone, email, sex, born) VALUES (#{uid}, #{phone}, #{email}, #{sex}, #{born})
+    </insert>
+    <insert id="addRights">
+        insert into rights(uid, code,`type`) VALUES (${uid}, #{code}, ${type});
+    </insert>
+    <update id="updateUser">
+        update `user` set password=#{password} where uid=#{uid};
+    </update>
+    <update id="updateRights">
+        update `rights` set `type`=${type} where uid=${uid};
+    </update>
+    <delete id="delUserByUid">
+        delete from user where `uid`=${uid};
+    </delete>
+    <delete id="delUserInfoByUid">
+        delete from user_info where `uid`=${uid};
+    </delete>
+
+    <select id="queryUserAll" resultType="com.holanswide.model.User">
+        select `uid`, `username`, `password` from user limit #{pageBegin},#{pageSize};
+    </select>
+    <select id="queryUserByUsername" resultType="com.holanswide.model.User">
+        select `uid`,`username`,`password` from user where username = #{username};
+    </select>
+    <select id="queryUserByInfo" resultType="com.holanswide.model.User">
+        select `uid`,`phone`,`email`,`sex`,`born` from user_info where ${type} = #{key}
+    </select>
+    <select id="queryUserByUid" resultType="com.holanswide.model.User">
+        select `uid`, `username`, `password` from user where `uid`=${uid};
+    </select>
+    <select id="queryUidByPhone" resultType="java.lang.Integer">
+        select `uid` from user_info where `phone`=#{phone};
+    </select>
+    <select id="queryUserInfoAll" resultType="com.holanswide.model.UserInfo">
+        select `uid`,`phone`,`email`,`sex`,`born` from user_info limit #{pageBegin},#{pageSize};
+    </select>
+    <select id="queryUserInfoByUid" resultType="com.holanswide.model.UserInfo">
+        select `uid`,`phone`,`email`,`sex`,`born` from user_info where uid=${uid};
+    </select>
+    <select id="queryRightByUid" resultType="java.lang.Integer">
+        select `type` from rights where uid=${uid};
+    </select>
+    <select id="queryCodeByUid" resultType="java.lang.String">
+        select `code` from rights where uid=${uid};
+    </select>
+    <select id="queryAllUid" resultType="java.lang.Integer">
+        select `uid` from `user`;
+    </select>
+    <select id="queryAllInfo" resultType="com.holanswide.model.AllInfo">
+        select u.uid,r.type,u.username,r.code,i.phone,i.email,i.born,i.sex
+            from `user` as u, `user_info` as i, `rights` as r
+            where u.uid=i.uid and u.uid=r.uid;
+    </select>
+</mapper>
