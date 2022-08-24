@@ -55,9 +55,10 @@
     bottom: 0;
   }
   .wrong-msg {
+    color: red;
     position: absolute;
-    top:235px;
-    left: 790px;
-    right: 0;
+    top:265px;
+    left: 0;
+    right: 200px;
     bottom: 0;
   }

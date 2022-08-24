@@ -35,7 +35,8 @@ new Vue({
             },
             userDiaData:{
                 uid:'',
-                isShow:false
+                isShow:false,
+                isManaShow:false
             },
             files:[],
             refiles:[],
@@ -172,6 +173,37 @@ new Vue({
         },
     },
     methods: {
+            doManaUser(row, column, cell, event) {
+                this.userDiaData.isManaShow=true;
+                this.userDiaData.uid=row.uid;
+            },
+            upTo(type) {
+                axios
+                    .get('http://localhost/user/uptype?type='+type+'&uid='+this.userDiaData.uid)
+                    .then(response=>{
+                        this.$message({
+                            message:'操作成功',
+                            type:'success',
+                            showClose:true,
+                            duration:0
+                        });
+                        this.userDiaData.isManaShow=false;
+                        axios
+                            .get('http://localhost/user/all')
+                            .then(response=>{
+                                this.userList=response.data;
+                                for(let i=0;i<this.userList.length;i++) {
+                                    if(this.userList[i].sex===1) this.userList[i].sex='男';
+                                    else this.userList[i].sex='女';
+                                    if(this.userList[i].type===0) this.userList[i].type='超级管理员';
+                                    else if(this.userList[i].type===1) this.userList[i].type='管理员';
+                                    else if(this.userList[i].type===2) this.userList[i].type='审核员';
+                                    else if(this.userList[i].type===3) this.userList[i].type='用户';
+                                }
+                                this.reUserList=this.userList;
+                            });
+                    });
+            },
             doUser(row, column, cell, event) {
                 this.userDiaData.isShow=true;
                 this.userDiaData.uid=row.uid;
@@ -316,7 +348,8 @@ new Vue({
             window.location.href='http://localhost/user/exit';
         },
         handleClose(){
-
+            this.userDiaData.isShow=false;
+            this.userDiaData.isManaShow=false;
         }
     }
 });

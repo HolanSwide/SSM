@@ -43,10 +43,22 @@
                 v-model="repass"></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button @click="toRepass" class="sub-button">提交</el-button>
+                <el-button @click="toRepass"
+                           class="sub-button"
+                           :disabled="!same"
+                >提交</el-button>
             </el-form-item>
         </el-form>
-        <span class="wrong-msg" style="color: red;" v-if="!same">密码不一致！</span>
+        <p class="wrong-msg"
+           style="color: red;
+                        position: absolute;
+                        top:255px;
+                        left: 1000px;
+                        right: 0;
+                        bottom: 0;"
+           v-if="!same">
+            密码不一致！
+        </p>
     </div>
   </div>
   <script src="http://localhost/app/js/repass.js"></script>

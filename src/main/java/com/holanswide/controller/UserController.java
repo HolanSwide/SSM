@@ -24,12 +24,19 @@ import java.util.List;
 /**
  * @author ：holan
  * @description：TODO
- * @date ：2022/6/24 0:00
+ * @date ：2022/8/4 0:00
  */
 
 @Controller
 @RequestMapping(value = "/user", produces = {"application/json;charset=UTF-8"})
 public class UserController {
+    @GetMapping("/uptype")
+    public @ResponseBody
+    String changeType(@RequestParam("type") int type, @RequestParam("uid") int uid) {
+        SpringBean.getAc().getBean("userMapImp", UserMapImp.class).updateRights(type, uid);
+        return "修改成功";
+    }
+
     @GetMapping(value = "/del",produces = {"application/json;charset=UTF-8"})
     public @ResponseBody
     String delUser(@RequestParam("uid") int uid) {
@@ -37,6 +44,7 @@ public class UserController {
         SpringBean.getAc().getBean("userMapImp", UserMapImp.class).delUserInfoByUid(uid);
         return "删除成功";
     }
+
     @GetMapping(value = "/all",produces = {"application/json;charset=UTF-8"})
     public @ResponseBody
     String getAll() {
@@ -44,6 +52,7 @@ public class UserController {
                 SpringBean.getAc().getBean("userMapImp", UserMapImp.class).queryAllInfo()
         );
     }
+
     @GetMapping("/type")
     public @ResponseBody
     String getType(@RequestParam(name = "uid",required = true) int uid) {
@@ -51,6 +60,7 @@ public class UserController {
                 SpringBean.getAc().getBean("userMapImp", UserMapImp.class).queryRightByUid(uid)
         );
     }
+
     @GetMapping("/myinfo")
     public @ResponseBody
     String getMyInfo(HttpServletRequest request) {
@@ -60,6 +70,7 @@ public class UserController {
                 SpringBean.getAc().getBean("userMapImp", UserMapImp.class).queryUserInfoByUid(me.getUid())
         );
     }
+
     @GetMapping("/exit")
     public String toExit(HttpServletRequest request) {
         request.getSession().invalidate();

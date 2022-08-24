@@ -35,6 +35,7 @@ public class FileController {
                 SpringBean.getAc().getBean("fileMapImp", FileMapImp.class).queryFileInfoAll()
         );
     }
+
     @PostMapping("/del")
     public @ResponseBody
     String delInfo(@RequestBody String obj) {
@@ -42,6 +43,7 @@ public class FileController {
         SpringBean.getAc().getBean("fileMapImp", FileMapImp.class).delFileByURL(url);
         return "1";
     }
+
     @GetMapping(value = "/myfile",produces = {"application/json;charset=UTF-8"})
     public @ResponseBody
     String getMyInfo(@RequestParam(name = "uid",required = true) int uid) {
@@ -49,6 +51,7 @@ public class FileController {
                 SpringBean.getAc().getBean("fileMapImp", FileMapImp.class).queryFileInfoByUid(uid)
         );
     }
+
     //    单个文件直接上传
     @PostMapping(value = "/upload", produces = {"multipart/form-data"})
     public @ResponseBody

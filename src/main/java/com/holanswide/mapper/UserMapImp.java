@@ -102,8 +102,8 @@ public class UserMapImp implements UserMap {
     }
 
     @Override
-    public void updateRights(Rights rights) {
-        this.session.getMapper(UserMap.class).updateRights(rights);
+    public void updateRights(int type, int uid) {
+        this.session.getMapper(UserMap.class).updateRights(type, uid);
     }
 
     @Override

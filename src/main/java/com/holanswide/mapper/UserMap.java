@@ -27,7 +27,7 @@ public interface UserMap {
 
     public void updateUser(User user);
 
-    public void updateRights(Rights rights);
+    public void updateRights(@Param("type") int type,@Param("uid") int uid);
     public void addRights(Rights rights);
     public int queryRightByUid(int uid);
     public String queryCodeByUid(int uid);
