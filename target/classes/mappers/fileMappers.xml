@@ -16,6 +16,6 @@
                                                            where `uid`=${uid};
     </select>
     <select id="queryFileInfoAll" resultType="com.holanswide.model.FileInfo">
-        select url, uid, filename, `describe`, type, memory from file;
+        select  url, uid, filename, `describe`, type, memory from file;
     </select>
 </mapper>
